@@ -10,8 +10,6 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
 {
     if (head == NULL)
         return (NULL);
-    if (head->next == NULL)
-        return (head);
     
     struct ListNode* loop;
     loop = head;
