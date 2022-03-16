@@ -1,9 +1,10 @@
-#include <stdlib.h>
-
  struct ListNode {
       int val;
       struct ListNode *next;
   };
+
+#define NULL 0
+
 
 struct ListNode* deleteDuplicates(struct ListNode* head)
 {
