@@ -1,16 +1,33 @@
+#include <stdbool.h>
+#include <math.h>
+
 bool isPalindrome(int x)
 {
-    double reversed = 0;
-    int temp = x;
-    
-    if(x<0)
-        return false;
-
-    while(temp){
-        reversed *= 10;
-        reversed += temp%10;
-        temp = temp/10;
+    if (x < 0)
+    {
+        return (false);
     }
-
-    return reversed == x;
+    
+    int copy = x;
+    int digits = 1;
+    
+    while (copy >= 10)
+    {
+        copy = copy / 10;
+        digits++;
+    }
+    
+    int i;
+    int j;
+    
+    for (i = 0, j = digits - 1; i < digits / 2; i++, j--)
+    {
+        int front   = ( x / (int)pow(10, j) ) % 10;
+        int back    = ( x / (int)pow(10, i) ) % 10;
+        if (front != back)
+        {
+            return (false);
+        }
+    }
+    return (true);
 }
